@@ -4,7 +4,9 @@ import {
 Page({
   data: {
     swiperList: [],
-    categoryList:[]
+    categoryList:[],
+    // 楼层数据
+    floorList:[]
   },
   // 事件处理函数
   bindViewTap() {
@@ -15,6 +17,7 @@ Page({
   onLoad() {
    this.getswiperList()
    this.getCategoryList()
+   this.getFloorList()
   },
 
   // net work
@@ -37,6 +40,17 @@ Page({
     .then(result => {
       this.setData({
         categoryList: result.data.message
+      })
+    })
+  },
+  // 获取楼层数据
+  getFloorList(){
+    request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
+    })
+    .then(result => {
+      this.setData({
+        floorList: result.data.message
       })
     })
   }
