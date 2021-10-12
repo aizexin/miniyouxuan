@@ -38,5 +38,17 @@ Page({
         rightContent: rightContent
       })
     })
+  },
+  // ----------action
+  onclickItem(event){
+    console.log(event)
+    // 1.获取点击的索引
+    const {index} = event.currentTarget.dataset
+    // 获取不同索引右边的值
+    let rightContent = this.categoryList[index].children
+    this.setData ({
+      currentIndex: index,
+      rightContent
+    })
   }
 })

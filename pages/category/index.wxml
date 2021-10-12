@@ -3,7 +3,9 @@
   <view class="categorys_container">
     <!-- 左侧菜单 -->
     <scroll-view scroll-y class="left_menu">
-      <view class="menu_item {{currentIndex===index?'active':''}} " wx:for="{{leftMenuList}}" wx:key="index">{{item}}</view>
+      <view class="menu_item {{currentIndex===index?'active':''}} " wx:for="{{leftMenuList}}" wx:key="index"
+      bind:tap="onclickItem"
+      data-index="{{index}}">{{item}}</view>
     </scroll-view>
     <!-- 右侧内容 -->
     <scroll-view class="right_content" scroll-y>
