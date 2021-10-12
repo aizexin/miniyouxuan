@@ -2,6 +2,7 @@ import {
   request
 } from "../../request/index.js"
 import regeneratorRuntime from '../../lib/runtime/runtime';
+import { showToastText } from "../../utils/toast.js";
 
 Page({
 
@@ -27,7 +28,9 @@ Page({
       }
     ],
     currentIndex:0,
-    goodsList:[]
+    goodsList:[],
+    // 总页数
+    totalPage:0
   },
   // 接口需要的参数
   QueryParams:{
@@ -45,13 +48,31 @@ Page({
     this.QueryParams.cid = options.cid
     this.getGoodsList()
   },
+  onReachBottom(options){
+    // 1. 判断是否还有下一页
+    if( this.QueryParams.pagenum >= this.data.totalPage) {
+      showToastText('没有下一页了')
+    } else {
+      console.log('还有下一页')
+      this.loadmoreGoodsList()
+    }
+  },
   // -----------net work
   // 获取商品列表
   async getGoodsList(){
     const res = await request({url:'/goods/search',data: this.QueryParams})
-
     this.setData({
-      goodsList:res.goods
+      goodsList:res.goods,
+      totalPage:Math.ceil(res.total/this.QueryParams.pagesize)
+    })
+  },
+   // 获取下一页列表
+   async loadmoreGoodsList(){
+     this.QueryParams.pagenum += 1
+    const res = await request({url:'/goods/search',data: this.QueryParams})
+    this.setData({
+      goodsList:[...this.data.goodsList,...res.goods],
+      totalPage:Math.ceil(res.total/this.QueryParams.pagesize)
     })
   },
   // -----action----
@@ -64,6 +85,5 @@ Page({
       [activeKey] :true,
       [oldActiveKey] :false
     })
-    
   }
 })
