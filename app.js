@@ -1,5 +1,5 @@
 import {
-  showToastText
+  showToastText, showLoadingText, hidenLoading
 } from "./utils/toast"
 
 App({

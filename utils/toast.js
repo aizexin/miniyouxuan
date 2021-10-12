@@ -5,3 +5,14 @@ export function showToastText(title) {
     icon: 'none'
   })
 }
+
+export function showLoadingText(title) {
+  return wx.showLoading({
+    title: title,
+    mask:true
+  })
+}
+
+export function hidenLoading() {
+  return wx.hideLoading()
+}

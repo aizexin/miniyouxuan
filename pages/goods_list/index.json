@@ -4,5 +4,7 @@
     "tabs":"/components/tabs/Tabs",
     "ai-composite-cell":"./components/ai-composite-cell/ai-composite-cell"
   },
-  "navigationBarTitleText": "商品列表"
+  "navigationBarTitleText": "商品列表",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

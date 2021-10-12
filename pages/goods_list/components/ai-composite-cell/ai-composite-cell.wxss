@@ -3,6 +3,7 @@
   display: flex;
 }
 .cell .leftImage {
+  padding: 16rpx 0;
   display: flex;
   flex: 2;
   justify-content: center;

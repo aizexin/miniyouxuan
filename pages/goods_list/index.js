@@ -48,7 +48,7 @@ Page({
     this.QueryParams.cid = options.cid
     this.getGoodsList()
   },
-  onReachBottom(options){
+  onReachBottom(){
     // 1. 判断是否还有下一页
     if( this.QueryParams.pagenum >= this.data.totalPage) {
       showToastText('没有下一页了')
@@ -56,6 +56,15 @@ Page({
       console.log('还有下一页')
       this.loadmoreGoodsList()
     }
+  },
+  // 下啦刷新
+  onPullDownRefresh() {
+    console.log('1111')
+    // // 1。重置数组
+    // 2.重置页码
+    this.QueryParams.pagenum = 1
+    // 3.发送请求
+    this.getGoodsList()
   },
   // -----------net work
   // 获取商品列表
@@ -65,6 +74,8 @@ Page({
       goodsList:res.goods,
       totalPage:Math.ceil(res.total/this.QueryParams.pagesize)
     })
+    // 关闭下拉窗口  没有调用下拉刷新 直接关闭不会报错
+    wx.stopPullDownRefresh()
   },
    // 获取下一页列表
    async loadmoreGoodsList(){
