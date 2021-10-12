@@ -12,3 +12,6 @@ page {
   /* 定义统一字体大小 假设设计稿 大小是375px */
   font-size: 28rpx;
 }
+image {
+  width: 100%;
+}
