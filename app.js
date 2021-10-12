@@ -1,4 +1,7 @@
-// app.js
+import {
+  showToastText
+} from "./utils/toast"
+
 App({
   onLaunch() {
     // 展示本地存储能力
