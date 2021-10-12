@@ -1,9 +1,6 @@
 import {
   request
 } from "../../request/index.js"
-import {
-  showToastText
-} from "../../utils/toast.js"
 import regeneratorRuntime from '../../lib/runtime/runtime';
 
 const Cates_Key = 'Cates_Key'

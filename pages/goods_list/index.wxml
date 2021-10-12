@@ -1,2 +1,11 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<searchInput></searchInput>
+<tabs tabs="{{tabs}}" bind:itemChange="itemChange">
+  <block 
+  wx:for="{{goodsList}}" 
+  wx:key="index"
+  wx:if="{{currentIndex===0}}" 
+  >
+    <ai-composite-cell goodsObj="{{item}}"></ai-composite-cell>
+  </block>
+  <block wx:if="{{currentIndex===1}}">1</block>
+</tabs>

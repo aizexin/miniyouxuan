@@ -1,0 +1,13 @@
+<view class="cell">
+  <view class="leftImage">
+    <image 
+    src="{{goodsObj.goods_small_logo?goodsObj.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+    mode="widthFix"
+    >
+    </image>
+  </view>
+  <view class="rightcontent">
+    <text class="title">{{goodsObj.goods_name}}</text>
+    <text class="price">{{goodsObj.goods_price}}</text>
+  </view>
+</view>
