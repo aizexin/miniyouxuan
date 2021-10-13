@@ -11,7 +11,7 @@
 <!-- 标题 -->
 <view class="goods_title">
   <text class="goods_name">
-    {{goodsDetailObj.goods_name}}12121212121dsakdjakldadjsklajdlajdklajdj2121212345678923456783456789
+    {{goodsDetailObj.goods_name}}
   </text>
   <view class="goods_collect_wrap">
     <text class="iconfont icon-shoucang"></text>

@@ -1,4 +1,6 @@
-import { request } from "../../request/index"
+import {
+  request
+} from "../../request/index"
 
 // pages/goods_detail/index.js
 Page({
@@ -7,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsDetailObj:{}
+    goodsDetailObj: {}
   },
 
   /**
@@ -20,10 +22,20 @@ Page({
   },
   // -----net work
   async getGoodsDetail(good_id) {
-    const res = await request({'url':'/goods/detail','data':{goods_id:good_id}})
-    console.log(res)
+    const res = await request({
+      'url': '/goods/detail',
+      'data': {
+        goods_id: good_id
+      }
+    })
+
     this.setData({
-      goodsDetailObj: res
+      goodsDetailObj: {
+        goods_name: res.goods_name,
+        goods_price: res.goods_price,
+        goods_introduce: res.goods_introduce.replace(/\.webp/g,'.jpg'),
+        pics: res.pics
+      }
     })
   }
 })
