@@ -37,5 +37,15 @@ Page({
         pics: res.pics
       }
     })
+  },
+  // ----action
+  handlePrevewImage(event){
+    const urls = this.data.goodsDetailObj.pics.map(v=>v.pics_mid)
+    const currenturl = event.currentTarget.dataset.currenturl
+    console.log(currenturl)
+    wx.previewImage({
+      urls: urls,
+      current: currenturl
+    })
   }
 })
