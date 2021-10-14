@@ -1,6 +1,7 @@
 import {
   request
 } from "../../request/index"
+import { showToastText } from "../../utils/toast"
 
 // pages/goods_detail/index.js
 Page({
@@ -34,6 +35,7 @@ Page({
         goods_name: res.goods_name,
         goods_price: res.goods_price,
         goods_introduce: res.goods_introduce.replace(/\.webp/g,'.jpg'),
+        goods_id: res.goods_id,
         pics: res.pics
       }
     })
@@ -47,5 +49,26 @@ Page({
       urls: urls,
       current: currenturl
     })
+  },
+  // tool -action 
+  // 点击购物车
+  onclickAddShopCart() {
+    console.log('------')
+    // 1. 获取缓存中的购物车
+    let cart = wx.getStorageSync('cart') || [];
+    // 2.判断 商品对象是否存在
+    let index = cart.findIndex(v=>v.goods_id === this.data.goodsDetailObj.goods_id) 
+    if (index === -1 ) { 
+      // 不存在  第一次添加
+      this.data.goodsDetailObj.num = 1
+      this.data.goodsDetailObj.checked = true
+      cart.push(this.data.goodsDetailObj)
+    } else {
+      cart[index].num++
+    }
+    // 把购物车重新添加回缓存
+    wx.setStorageSync('cart', cart)
+    // 提示
+    showToastText('加入成功')
   }
 })

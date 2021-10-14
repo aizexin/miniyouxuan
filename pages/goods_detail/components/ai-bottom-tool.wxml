@@ -18,7 +18,8 @@
       <text>购物车</text>
     </navigator>
   </view>
-  <view class="addshop"><text>加入购物车</text></view>
+  <!-- 添加购物车 -->
+  <view class="addshop" bindtap="onclickAddShopCart"><text>加入购物车</text></view>
   <view class="buy"><text>立即购买</text></view>
 
 </view>
