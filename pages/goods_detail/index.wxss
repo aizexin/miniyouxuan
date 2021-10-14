@@ -38,3 +38,12 @@
   font-weight: 600;
   font-size: 32rpx;
 }
+.bottom_tool {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 90rpx;
+  background-color: #fff;
+  padding-bottom: env(safe-area-inset-bottom);
+}

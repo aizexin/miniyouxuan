@@ -39,3 +39,67 @@
 .icon-tuihuotuikuan_dianpu:before {
   content: "\e773";
 }
+page {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 90rpx);
+}
+.tool_content {
+  display: flex;
+}
+.tool_content .tool_item {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tool_content .tool_item navigator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tool_content .tool_item view {
+  padding: 5rpx 0 5rpx 0;
+}
+.tool_content .tool_item text {
+  height: 90rpx;
+  text-align: center;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tool_content .tool_item button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.tool_content .addshop {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tool_content .addshop text {
+  width: 100%;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  background-color: orange;
+}
+.tool_content .buy {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tool_content .buy text {
+  width: 100%;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  background-color: red;
+}

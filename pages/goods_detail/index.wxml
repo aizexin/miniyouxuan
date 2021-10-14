@@ -25,3 +25,5 @@
 </view>
 <!-- h5 -->
 <rich-text nodes="{{goodsDetailObj.goods_introduce}}"></rich-text>
+<!-- 工具栏 -->
+<ai-bottom-tool class="bottom_tool"></ai-bottom-tool>

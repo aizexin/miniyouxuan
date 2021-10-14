@@ -1,0 +1,78 @@
+@import url("../../../styles/iconfont.wxss");
+
+page {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 90rpx);
+}
+
+.tool_content {
+    display: flex;
+
+    .tool_item {
+        navigator {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        display: flex;
+        flex: 2;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        view {
+            padding: 5rpx 0 5rpx 0;
+        }
+
+        text {
+            height: 90rpx;
+            text-align: center;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        button {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+
+    .addshop {
+        flex: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text {
+            width: 100%;
+            text-align: center;
+            line-height: 90rpx;
+            color: #fff;
+            background-color: orange;
+        }
+
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .buy {
+        flex: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text {
+            width: 100%;
+            text-align: center;
+            line-height: 90rpx;
+            color: #fff;
+            background-color: red;
+        }
+
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}

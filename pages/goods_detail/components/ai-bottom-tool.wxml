@@ -1,0 +1,24 @@
+<view class="tool_content">
+  <!-- 客服 -->
+  <view class="tool_item">
+    <view class="iconfont icon-kefu"></view>
+    <text>客服</text>
+    <button open-type="feedback"></button>
+  </view>
+  <!-- 分享 -->
+  <view class="tool_item">
+    <view class="iconfont icon-yixianshi-"></view>
+    <text>分享</text>
+    <button open-type="share"></button>
+  </view>
+  <!-- 购物车 -->
+  <view class="tool_item">
+    <navigator url="/pages/cart/index" open-type="switchTab">
+      <view class="iconfont icon-gouwuche"></view>
+      <text>购物车</text>
+    </navigator>
+  </view>
+  <view class="addshop"><text>加入购物车</text></view>
+  <view class="buy"><text>立即购买</text></view>
+
+</view>
