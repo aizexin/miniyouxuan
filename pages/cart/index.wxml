@@ -1,9 +1,14 @@
 <ai-address-choose address="{{address}}" bindonClickGetAddress="onClickGetAddress">
 </ai-address-choose>
+<!-- tips -->
+<view class="tips">
+  <text>购物车</text>
+</view>
 <!-- 购物车内容 -->
 <view class="cart_content">
-  <view class="cart_title"></view>
   <view class="cart_list">
-    <view class="cart_cell"></view>
+    <ai-cart-cell class="cart_cell"></ai-cart-cell>
   </view>
 </view>
+<!-- 工具栏 -->
+<ai-bottom-tool></ai-bottom-tool>

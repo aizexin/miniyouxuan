@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "ai-address-choose":"./components/ai-address-choose/ai-address-choose"
+    "ai-address-choose":"./components/ai-address-choose/ai-address-choose",
+    "ai-cart-cell":"./components/ai-cart-cell/ai-cart-cell",
+    "ai-bottom-tool":"./components/ai-bottom-tool/ai-bottom-tool"
   },
   "navigationBarTitleText": "购物车"
 }

@@ -1,0 +1,40 @@
+.content {
+    position: absolute;
+    width: 100%;
+    bottom: 0rpx;
+    display: flex;
+    .left {
+        flex: 8;
+        display: flex;
+        justify-content: space-between;
+        checkbox-group {
+            display: flex;
+            align-items: center;
+            padding-left: 20rpx;
+        }
+       
+        .price {
+            padding-right: 20rpx;
+            .price_num {
+                display: flex;
+                .totoal {
+                }
+                .num {
+                    color: var(--themeColor);
+                }
+            }
+            .tips {
+                text-align: right;
+            }
+        }
+    }
+    .submit {
+        flex: 2;
+        background-color: var(--themeColor);
+        color: white;
+        font-size: 32rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

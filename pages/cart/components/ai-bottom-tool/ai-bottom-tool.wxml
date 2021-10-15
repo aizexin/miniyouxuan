@@ -1,0 +1,15 @@
+<view class="content">
+  <view class="left">
+    <checkbox-group>
+      <checkbox>全选</checkbox>
+    </checkbox-group>
+    <view class="price">
+      <view class="price_num">
+        <view class="totoal">合计：</view>
+        <view class="num">¥99998</view>
+      </view>
+      <view class="tips">包含运费</view>
+    </view>
+  </view>
+  <view class="submit">结算</view>
+</view>
