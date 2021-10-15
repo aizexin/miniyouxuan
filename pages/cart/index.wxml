@@ -15,4 +15,6 @@
   </view>
 </view>
 <!-- 工具栏 -->
-<ai-bottom-tool></ai-bottom-tool>
+<ai-bottom-tool allChecked="{{allChecked}}"
+totalNum="{{totalNum}}"
+totalPrice="{{totalPrice}}"></ai-bottom-tool>

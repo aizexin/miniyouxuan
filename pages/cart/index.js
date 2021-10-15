@@ -17,7 +17,10 @@ Page({
    */
   data: {
     address:{},
-    cart:[]
+    cart:[],
+    allChecked:false,
+    totalPrice:0,
+    totalNum:0
   },
 
   /**
@@ -26,17 +29,32 @@ Page({
   onShow() {
     // 1. 获取缓存中的地址信息
     const address = wx.getStorageSync(Address_Key)
-    console.log(address)
-    this.setData({
-      address:address
+    // 2. 获得购物车数据
+    const data = wx.getStorageSync('cart') || []
+    // // 计算全选 every 会循环，遇到flase的时候就返回flase  但是空数组返回也是true
+    // const allChecked = data.length ? data.every(v => v.checked) : false
+
+    let totalPrice = 0
+    let totalNum = 0
+    let allChecked = true
+    data.forEach(v=> {
+      if(v.checked) {
+        totalNum += v.num
+        totalPrice += v.num * v.goods_price
+      } else {
+        allChecked = false
+      }
     })
-    this.readCartData()
-  },
-  // ---dataSource
-  readCartData() {
-    const data = wx.getStorageSync('cart')
+    if (data.length === 0) {
+      allChecked = false
+    }
+
     this.setData({
-      cart:data
+      address:address,
+      cart:data,
+      allChecked:allChecked,
+      totalNum,
+      totalPrice
     })
   },
   //  ------action
