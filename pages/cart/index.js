@@ -16,7 +16,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address:{}
+    address:{},
+    cart:[]
   },
 
   /**
@@ -28,6 +29,14 @@ Page({
     console.log(address)
     this.setData({
       address:address
+    })
+    this.readCartData()
+  },
+  // ---dataSource
+  readCartData() {
+    const data = wx.getStorageSync('cart')
+    this.setData({
+      cart:data
     })
   },
   //  ------action

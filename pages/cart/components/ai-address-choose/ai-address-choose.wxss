@@ -1,5 +1,5 @@
 .revice_address_row .address_btn {
-  padding-top: 20rpx;
+  padding: 20rpx 0;
 }
 .revice_address_row .address_btn button {
   width: 60%;

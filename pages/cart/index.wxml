@@ -7,7 +7,11 @@
 <!-- 购物车内容 -->
 <view class="cart_content">
   <view class="cart_list">
-    <ai-cart-cell class="cart_cell"></ai-cart-cell>
+    <ai-cart-cell class="cart_cell" 
+    wx:for="{{cart}}"
+    wx:key="index"
+    data="{{cart[index]}}"
+    ></ai-cart-cell>
   </view>
 </view>
 <!-- 工具栏 -->

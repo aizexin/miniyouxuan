@@ -1,17 +1,17 @@
 <view class="cellcontent">
   <checkbox-group>
-    <checkbox></checkbox>
+    <checkbox checked="{{data.checked}}"></checkbox>
   </checkbox-group>
   <view class="icon">
-    <image mode="widthFix" src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF"></image>
+    <image mode="widthFix" src="{{data.pics[0].pics_sma}}"></image>
   </view>
   <view class="info">
-    <view class="title">jkaldjsakldj3dakdjakdjkadjkajd182918219291291829182192812981928kajdjajddajkdajdlja456789</view>
+    <view class="title">{{data.goods_name}}</view>
     <view class="priceTool">
-      <view class="price">¥99998</view>
+      <view class="price">¥{{data.goods_price}}</view>
       <view class="numberTool">
         <view class="sub">-</view>
-        <text class="number">10</text>
+        <text class="number">{{data.num}}</text>
         <view class="add">+</view>
       </view>
     </view>
