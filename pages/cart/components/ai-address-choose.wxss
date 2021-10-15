@@ -1,0 +1,21 @@
+.revice_address_row .address_btn {
+  padding-top: 20rpx;
+}
+.revice_address_row .address_btn button {
+  width: 60%;
+}
+.address_info {
+  display: flex;
+}
+.address_info .user_info {
+  padding: 15rpx;
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+}
+.address_info .user_phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 3;
+}

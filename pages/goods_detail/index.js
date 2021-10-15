@@ -21,6 +21,23 @@ Page({
     console.log(goods_id)
     this.getGoodsDetail(goods_id)
   },
+  onShow(option){
+    const info = wx.getLaunchOptionsSync()
+    const shareTicket = info.shareTicket
+    console.log(info)
+    console.log('onshow')
+    wx.getShareInfo({
+      shareTicket: shareTicket,
+      success:(res)=> {
+        console.log(res)
+        console.log('分享返回')
+      },
+      fail:(err)=> {
+        console.log('分享错误')
+        console.log(err)
+      }
+    })
+  },
   // -----net work
   async getGoodsDetail(good_id) {
     const res = await request({

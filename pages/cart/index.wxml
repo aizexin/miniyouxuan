@@ -1,2 +1,9 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<ai-address-choose address="{{address}}" bindonClickGetAddress="onClickGetAddress">
+</ai-address-choose>
+<!-- 购物车内容 -->
+<view class="cart_content">
+  <view class="cart_title"></view>
+  <view class="cart_list">
+    <view class="cart_cell"></view>
+  </view>
+</view>

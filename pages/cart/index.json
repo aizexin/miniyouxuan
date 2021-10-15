@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "ai-address-choose":"./components/ai-address-choose/ai-address-choose"
+  },
+  "navigationBarTitleText": "购物车"
 }
