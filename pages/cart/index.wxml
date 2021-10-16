@@ -6,20 +6,20 @@
 </view>
 <!-- 购物车内容 -->
 <view class="cart_content">
-  <view class="cart_list">
-    <ai-cart-cell 
-    class="cart_cell" 
-    wx:for="{{cart}}"
-    wx:for-index="index"
-    wx:key="index"
-    data="{{cart[index]}}"
-    cell_index = "{{index}}"
-    bindonClickItemCheck="onClickItemCheck"
-    bindonClickChangeItemNum="onClickChangeItemNum"
-    ></ai-cart-cell>
-  </view>
+  <block wx:if="{{cart.length === 0}}">
+    <view class="emptyCart">
+      <navigator class="emptyCart" url="/pages/index/index" open-type="switchTab">
+        请加入购物车
+      </navigator>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="cart_list">
+      <ai-cart-cell class="cart_cell" wx:for="{{cart}}" wx:for-index="index" wx:key="index" data="{{cart[index]}}"
+        cell_index="{{index}}" bindonClickItemCheck="onClickItemCheck" bindonClickChangeItemNum="onClickChangeItemNum">
+      </ai-cart-cell>
+    </view>
+  </block>
 </view>
 <!-- 工具栏 -->
-<ai-bottom-tool allChecked="{{allChecked}}"
-totalNum="{{totalNum}}"
-totalPrice="{{totalPrice}}"></ai-bottom-tool>
+<ai-bottom-tool allChecked="{{allChecked}}" totalNum="{{totalNum}}" totalPrice="{{totalPrice}}"></ai-bottom-tool>
