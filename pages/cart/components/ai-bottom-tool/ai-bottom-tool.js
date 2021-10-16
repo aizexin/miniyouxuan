@@ -31,6 +31,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onclickPay() {
+       this.triggerEvent('onclickPay')
+    }
   }
 })

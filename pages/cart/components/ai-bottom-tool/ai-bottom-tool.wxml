@@ -11,5 +11,5 @@
       <view class="tips">包含运费</view>
     </view>
   </view>
-  <view class="submit">结算({{totalNum}})</view>
+  <view class="submit" bindtap="onclickPay">结算({{totalNum}})</view>
 </view>

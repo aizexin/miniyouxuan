@@ -124,5 +124,23 @@ Page({
     wx.setStorageSync('cart', this.data.cart)
     // 设置底部工具栏
     this.setBottomTool(this.data.cart)
+  },
+  // ----底部工具栏代理
+  onclickPay() {
+    // 1.判断是否有地址
+    if (!this.data.address.cityName) {
+      showToastText('请选择收货地址')
+      return
+    }
+    // 2.判断是否选择商品
+    const isChooseShop = (this.data.cart.filter(v=>v.checked).length !== 0)
+    if (!isChooseShop) {
+      showToastText('请选择商品')
+      return
+    }
+    // 3.跳转支付
+    wx.navigateTo({
+      url: '/pages/pay/index',
+    })
   }
 })
