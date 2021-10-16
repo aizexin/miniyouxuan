@@ -4,7 +4,8 @@ import {
 import {
   getSetting,
   chooseAddress,
-  openSetting
+  openSetting,
+  showModal
 } from '../../utils/asyncwx'
 import regeneratorRuntime from '../../lib/runtime/runtime';
 
@@ -16,11 +17,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address:{},
-    cart:[],
-    allChecked:false,
-    totalPrice:0,
-    totalNum:0
+    address: {},
+    cart: [],
+    allChecked: false,
+    totalPrice: 0,
+    totalNum: 0
   },
 
   /**
@@ -34,28 +35,12 @@ Page({
     // // 计算全选 every 会循环，遇到flase的时候就返回flase  但是空数组返回也是true
     // const allChecked = data.length ? data.every(v => v.checked) : false
 
-    let totalPrice = 0
-    let totalNum = 0
-    let allChecked = true
-    data.forEach(v=> {
-      if(v.checked) {
-        totalNum += v.num
-        totalPrice += v.num * v.goods_price
-      } else {
-        allChecked = false
-      }
-    })
-    if (data.length === 0) {
-      allChecked = false
-    }
-
     this.setData({
-      address:address,
-      cart:data,
-      allChecked:allChecked,
-      totalNum,
-      totalPrice
+      address: address,
+      cart: data,
     })
+    // 设置底部工具栏
+    this.setBottomTool(data)
   },
   //  ------action
   async onClickGetAddress() {
@@ -73,7 +58,71 @@ Page({
       address.all = address.provinceName + address.cityName + address.countyName + address.detailInfo
       // 5 存储地址
       wx.setStorageSync(Address_Key, address)
-    } catch (error) {
+    } catch (error) {}
+  },
+  setBottomTool(cart) {
+    let totalPrice = 0
+    let totalNum = 0
+    let allChecked = true
+    cart.forEach(v => {
+      if (v.checked) {
+        totalNum += v.num
+        totalPrice += v.num * v.goods_price
+      } else {
+        allChecked = false
+      }
+    })
+    if (cart.length === 0) {
+      allChecked = false
     }
+    this.setData({
+      totalNum,
+      totalPrice,
+      allChecked
+    })
+  },
+  // ------cell 代理
+  onClickItemCheck(event) {
+    console.log('---onClickItemCheck-----')
+    const index = event.detail.index
+    const key = `cart[${index}].checked`
+    this.setData({
+      [key]: !this.data.cart[index].checked
+    })
+    // 设置底部工具栏
+    this.setBottomTool(this.data.cart)
+  },
+  async onClickChangeItemNum(event) {
+    console.log('--------')
+    const operate = event.detail.operate
+    const index = event.detail.index
+    console.log(index)
+    const num_key = `cart[${index}].num`
+    const endNum = this.data.cart[index].num + operate
+    if (endNum <= 0) {
+      // 提示 是否要删除
+      try {
+        const res = await showModal('是否要删除')
+        if (res.confirm) {
+          console.log('用户点击确定')
+          this.data.cart.splice(index, 1)
+          this.setData({
+            cart:this.data.cart
+          })
+        } else {
+          return
+        }
+      } catch (error) {
+        
+      }
+    } else {
+      this.setData({
+        [num_key]: endNum
+      })
+    }
+    // 修改之后的cart 存回银盘
+    wx.setStorageSync('cart', this.data.cart)
+    // 设置底部工具栏
+    this.setBottomTool(this.data.cart)
   }
 })

@@ -1,18 +1,20 @@
 <view class="cellcontent">
   <checkbox-group>
-    <checkbox checked="{{data.checked}}"></checkbox>
+    <checkbox checked="{{data.checked}}"
+    bindtap="onClickCheck"></checkbox>
   </checkbox-group>
   <view class="icon">
     <image mode="widthFix" src="{{data.pics[0].pics_sma}}"></image>
   </view>
+  <!-- 右边信息 -->
   <view class="info">
     <view class="title">{{data.goods_name}}</view>
     <view class="priceTool">
       <view class="price">¥{{data.goods_price}}</view>
       <view class="numberTool">
-        <view class="sub">-</view>
+        <view class="sub"bindtap="onClickChangeNum" data-operate="{{-1}}">-</view>
         <text class="number">{{data.num}}</text>
-        <view class="add">+</view>
+        <view class="add"bindtap="onClickChangeNum" data-operate="{{1}}">+</view>
       </view>
     </view>
   </view>

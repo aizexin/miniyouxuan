@@ -7,6 +7,10 @@ Component({
     data:{
       type:Object,
       value:null
+    },
+    cell_index:{
+      type:Number,
+      value:0
     }
   },
 
@@ -21,6 +25,15 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 点击勾选
+    onClickCheck(){
+      this.triggerEvent('onClickItemCheck',{"index":this.data.cell_index})
+    },
+    // 点击加减
+    onClickChangeNum(event) {
+      const operate = event.currentTarget.dataset.operate
+      console.log(this.data.cell_index)
+      this.triggerEvent('onClickChangeItemNum',{"operate":operate,"index":this.data.cell_index})
+    }
   }
 })

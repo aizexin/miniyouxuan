@@ -7,10 +7,15 @@
 <!-- 购物车内容 -->
 <view class="cart_content">
   <view class="cart_list">
-    <ai-cart-cell class="cart_cell" 
+    <ai-cart-cell 
+    class="cart_cell" 
     wx:for="{{cart}}"
+    wx:for-index="index"
     wx:key="index"
     data="{{cart[index]}}"
+    cell_index = "{{index}}"
+    bindonClickItemCheck="onClickItemCheck"
+    bindonClickChangeItemNum="onClickChangeItemNum"
     ></ai-cart-cell>
   </view>
 </view>
