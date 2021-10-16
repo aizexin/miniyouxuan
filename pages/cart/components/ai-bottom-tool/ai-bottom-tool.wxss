@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
 }
-.content .left checkbox-group {
+.content .left .checkGroup-box {
   display: flex;
   align-items: center;
   padding-left: 20rpx;

@@ -6,7 +6,7 @@ Component({
   properties: {
     address:{
       type:Object,
-      value:{}
+      value:null
     }
   },
 

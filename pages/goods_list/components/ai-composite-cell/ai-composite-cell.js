@@ -8,7 +8,7 @@ Component({
   properties: {
     goodsObj:{
       type:Object,
-      value:{}
+      value:null
     }
   },
 

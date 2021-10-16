@@ -1,7 +1,7 @@
 .revice_address_row .address_btn {
   padding: 20rpx 0;
 }
-.revice_address_row .address_btn button {
+.revice_address_row .address_btn .btn {
   width: 60%;
 }
 .address_info {

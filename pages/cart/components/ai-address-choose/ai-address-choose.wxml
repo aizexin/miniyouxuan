@@ -1,7 +1,7 @@
 <view class="revice_address_row">
   <!-- 当收货地址不存在的时候 -->
   <view class="address_btn" wx:if="{{!address.userName}}">
-    <button type="primary" plain bindtap="onClickGetAddress">获得收货地址</button>
+    <button class="btn" type="primary" plain bindtap="onClickGetAddress">获得收货地址</button>
   </view>
   <!-- 收获地址存在的时候 -->
   <view class="address_info" wx:else>

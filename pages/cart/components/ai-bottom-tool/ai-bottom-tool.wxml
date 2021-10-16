@@ -1,6 +1,6 @@
 <view class="content">
   <view class="left">
-    <checkbox-group>
+    <checkbox-group class="checkGroup-box">
       <checkbox checked="{{allChecked}}">全选</checkbox>
     </checkbox-group>
     <view class="price">
