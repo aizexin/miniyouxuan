@@ -1,0 +1,35 @@
+.content {
+  border-top: 1rpx solid #ccc;
+  position: absolute;
+  width: 100%;
+  bottom: 0rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  display: flex;
+}
+.content .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 8;
+}
+.content .left .price {
+  padding-right: 20rpx;
+}
+.content .left .price .price_num {
+  display: flex;
+}
+.content .left .price .price_num .num {
+  color: var(--themeColor);
+}
+.content .left .price .tips {
+  text-align: right;
+}
+.content .submit {
+  flex: 2;
+  background-color: var(--themeColor);
+  color: white;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

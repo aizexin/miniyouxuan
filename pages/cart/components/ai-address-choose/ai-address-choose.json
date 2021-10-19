@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "ai-addiress-info":"/components/ai-address-info/ai-addiress-info"
+  }
 }

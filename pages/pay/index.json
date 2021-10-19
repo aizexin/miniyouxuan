@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "ai-addiress-info":"/components/ai-address-info/ai-addiress-info",
+    "ai-payment-cell":"./components/ai-payment-cell/ai-payment-cell",
+    "ai-pay-bottom-tool":"./components/ai-pay-bottom-tool/ai-pay-bottom-tool"
+  },
+  "navigationBarTitleText": "商品支付"
 }

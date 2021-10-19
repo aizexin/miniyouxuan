@@ -1,2 +1,16 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<!-- 收获地址存在的时候 -->
+<ai-addiress-info address="{{address}}"></ai-addiress-info>
+<!-- tips -->
+<view class="tips">
+  <text>购物车</text>
+</view>
+<!-- 列表 -->
+<view class="cart_content">
+  <view class="cart_list">
+    <ai-payment-cell class="cart_cell" wx:for="{{cart}}" wx:for-index="index" wx:key="index" data="{{cart[index]}}" cell_index="{{index}}"></ai-payment-cell>
+  </view>
+</view>
+<!-- 工具栏 -->
+<ai-pay-bottom-tool 
+totalNum="{{totalNum}}" 
+totalPrice="{{totalPrice}}"></ai-pay-bottom-tool>

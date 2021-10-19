@@ -1,0 +1,12 @@
+<view class="content">
+  <view class="left">
+    <view class="price">
+      <view class="price_num">
+        <view class="totoal">合计：</view>
+        <view class="num">¥{{totalPrice}}</view>
+      </view>
+      <view class="tips">包含运费</view>
+    </view>
+  </view>
+  <view class="submit" bindtap="onclickPay">结算({{totalNum}})</view>
+</view>

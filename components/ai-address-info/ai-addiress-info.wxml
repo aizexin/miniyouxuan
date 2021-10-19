@@ -1,0 +1,14 @@
+  <!-- 收获地址存在的时候 -->
+  <view class="address_info" >
+    <view class="user_info">
+      <view>
+        收货人:{{address.userName}}
+      </view>
+      <view>
+        {{address.all}}
+      </view>
+    </view>
+    <view class="user_phone">
+      {{address.telNumber}}
+    </view>
+  </view>

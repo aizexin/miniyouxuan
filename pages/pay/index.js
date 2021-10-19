@@ -1,66 +1,45 @@
-// pages/pay/index.js
+const Address_Key = 'Address_Key'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    address:{},
+    cart:[],
+    totalPrice: 0,
+    totalNum: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+     // 1. 获取缓存中的地址信息
+     const address = wx.getStorageSync(Address_Key)
+     // 2. 获得购物车数据
+     let data = wx.getStorageSync('cart') || []
+     // // 计算全选 every 会循环，遇到flase的时候就返回flase  但是空数组返回也是true
+     // const allChecked = data.length ? data.every(v => v.checked) : false
+     data = data.filter(v=>v.checked)
+     this.setData({
+       address: address,
+       cart: data,
+     })
+     // 设置底部工具栏
+     this.setBottomTool(data)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  setBottomTool(cart) {
+    let totalPrice = 0
+    let totalNum = 0
+    cart.forEach(v => {
+      if (v.checked) {
+        totalNum += v.num
+        totalPrice += v.num * v.goods_price
+      }
+    })
+    this.setData({
+      totalNum,
+      totalPrice
+    })
   }
 })

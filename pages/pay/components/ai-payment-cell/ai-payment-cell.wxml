@@ -1,0 +1,15 @@
+<view class="cellcontent">
+  <view class="icon">
+    <image class="img" mode="widthFix" src="{{data.pics[0].pics_sma}}"></image>
+  </view>
+  <!-- 右边信息 -->
+  <view class="info">
+    <view class="title">{{data.goods_name}}</view>
+    <view class="priceTool">
+      <view class="price">¥{{data.goods_price}}</view>
+      <view class="numberTool">
+        <text class="number">x{{data.num}}</text>
+      </view>
+    </view>
+  </view>
+</view>

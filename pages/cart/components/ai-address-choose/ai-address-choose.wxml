@@ -4,17 +4,6 @@
     <button class="btn" type="primary" plain bindtap="onClickGetAddress">获得收货地址</button>
   </view>
   <!-- 收获地址存在的时候 -->
-  <view class="address_info" wx:else>
-    <view class="user_info">
-      <view>
-        收货人:{{address.userName}}
-      </view>
-      <view>
-        {{address.all}}
-      </view>
-    </view>
-    <view class="user_phone">
-      {{address.telNumber}}
-    </view>
-  </view>
+  <ai-addiress-info address="{{address}}" wx:else>
+  </ai-addiress-info>
 </view>
