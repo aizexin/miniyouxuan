@@ -1,0 +1,16 @@
+.contact {
+  display: flex;
+  justify-content: space-between; 
+  background-color: #fff;
+  height: 80rpx;
+}
+.tips {
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  line-height: 80rpx;
+}
+.number {
+  font-size: 28rpx;
+  padding-right: 10rpx;
+  line-height: 80rpx;
+}

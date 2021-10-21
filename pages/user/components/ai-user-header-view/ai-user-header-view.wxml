@@ -1,0 +1,11 @@
+<ai-user-header-view></ai-user-header-view>
+<view class="userInfoWarp">
+  <view class="user_image_wrap">
+    <image class="user_backGroud" src="{{userInfo.avatarUrl}}">
+    </image>
+    <view class="user_info">
+      <image class="user_icon" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user_name">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+</view>

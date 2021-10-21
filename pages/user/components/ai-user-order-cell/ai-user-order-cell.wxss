@@ -1,0 +1,27 @@
+@import "/styles/iconfont.wxss";
+.orderContent {
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+.order_title {
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 10rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.order_content {
+  display: flex;
+}
+.order_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  padding: 15rpx;
+  color: var(--themeColor);
+  font-size: 40rpx;
+}

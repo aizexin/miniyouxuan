@@ -1,0 +1,4 @@
+<view class="contact">
+  <text class="tips">联系客服</text>
+  <text class="number">400-000-0000</text>
+</view>

@@ -1,2 +1,23 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<ai-user-header-view userInfo="{{userInfo}}"></ai-user-header-view>
+<!-- 下部分泪容 -->
+<view class="contentBackGroud">
+  <view class="content">
+    <!-- 历史足迹 -->
+    <ai-user-history-cell></ai-user-history-cell>
+    <!-- 我的订单 -->
+    <ai-user-order-cell></ai-user-order-cell>
+    <!-- 收获地址管理 -->
+    <view class="addressManager">
+    收获地址管理
+    </view>
+    <!-- 联系客服 -->
+    <ai-user-contact-cell></ai-user-contact-cell>
+    <!-- 意见反馈 -->
+    <view class="feedback">意见反馈</view>
+    <!-- 关于我们 -->
+    <view class="about">关于我们</view>
+    <!-- 推荐 -->
+    <view class="share">
+    推荐给其他人</view>
+  </view>
+</view>

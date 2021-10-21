@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "ai-user-header-view":"./components/ai-user-header-view/ai-user-header-view",
+    "ai-user-history-cell":"./components/ai-user-history-cell/ai-user-history-cell",
+    "ai-user-order-cell":"./components/ai-user-order-cell/ai-user-order-cell",
+    "ai-user-contact-cell":"./components/ai-user-contact-cell/ai-user-contact-cell"
+  },
+  "navigationBarTitleText": "我的"
 }
