@@ -5,7 +5,7 @@
     <!-- 历史足迹 -->
     <ai-user-history-cell></ai-user-history-cell>
     <!-- 我的订单 -->
-    <ai-user-order-cell></ai-user-order-cell>
+    <ai-user-order-cell bindonclickItem = "onclickItem" ></ai-user-order-cell>
     <!-- 收获地址管理 -->
     <view class="addressManager">
     收获地址管理

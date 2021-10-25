@@ -15,5 +15,13 @@ Page({
     this.setData({
       userInfo
     })
+  },
+  // ----order action
+  onclickItem(event) {
+    console.log(event)
+    const {type} = event.detail
+    wx.navigateTo({
+      url: `/pages/order/index?type=${type}`
+    })
   }
 })

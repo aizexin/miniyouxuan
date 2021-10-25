@@ -1,2 +1,2 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<ai-tabs 
+tabs="{{tabs}}" binditemChange="itemChange">111</ai-tabs>

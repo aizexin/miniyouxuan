@@ -18,6 +18,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onclickItem(event){
+      const {type} = event.currentTarget.dataset
+      this.triggerEvent('onclickItem',{"type":type})
+    }
   }
 })
