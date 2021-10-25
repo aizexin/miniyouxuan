@@ -6,7 +6,7 @@ const TOKEN = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIzLCJpYXQiO
 
 export const request=(params)=> {
   ajxTimes++
-  let header = params.header
+  let header = {...params.header}
   header["Authorization"] = TOKEN
   // 定义公共的url
   const baseUrl = 'https://api-hmugo-web.itheima.net/api/public/v1'
