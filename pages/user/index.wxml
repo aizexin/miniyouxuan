@@ -13,7 +13,7 @@
     <!-- 联系客服 -->
     <ai-user-contact-cell></ai-user-contact-cell>
     <!-- 意见反馈 -->
-    <view class="feedback">意见反馈</view>
+    <navigator class="feedback" url="/pages/feedback/index">意见反馈</navigator>
     <!-- 关于我们 -->
     <view class="about">关于我们</view>
     <!-- 推荐 -->

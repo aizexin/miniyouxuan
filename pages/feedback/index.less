@@ -1,0 +1,76 @@
+page {
+    background-color: #eee;
+}
+
+tabs {
+    background-color: #fff;
+
+    view.feedback_main {
+        padding: 20rpx;
+        color: #666;
+
+        view.feedback_title {}
+
+        view.feedback_tips {
+            display: flex;
+            flex-wrap: wrap;
+
+            text {
+                width: 30%;
+                padding: 10rpx;
+                text-align: center;
+                background-color: #fff;
+                margin: 10rpx;
+            }
+        }
+
+        view.feedback_content {
+            background-color: #fff;
+            margin-top: 20rpx;
+            display: flex;
+            flex-direction: column;
+            textarea {
+                padding: 10rpx;
+                height: 400rpx;
+            }
+            .feedback_tool {
+                display: flex;
+                width: 100%;
+                background-color: #fff;
+                .upImageTool {
+                    height: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    padding-bottom: 30rpx;
+                    button {
+                        margin: 10rpx 20rpx;
+                        width: 100rpx;
+                    }
+                    .upImageItem {
+                        margin: 10rpx 20rpx;
+                        width: 100rpx;
+                        height: 100rpx;
+                    }
+                }
+            }
+        }
+
+        view.form_submitButton_warp {
+            margin-top: 20rpx;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--themeColor);
+                color: #fff;
+                position: absolute;
+                right: 20rpx;
+                width: 200rpx;
+            }
+        }
+    }
+}

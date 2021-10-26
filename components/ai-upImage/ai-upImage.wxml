@@ -1,0 +1,4 @@
+<view class="upImageWarp">
+  <image src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF"></image>
+  <icon type="clear" size="23" color="red"></icon>
+</view>

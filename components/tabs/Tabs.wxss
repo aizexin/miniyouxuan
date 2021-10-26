@@ -1,6 +1,6 @@
 .tabs .tabs_title {
+  background-color: #fff;
   height: 88rpx;
-  text-height: 88rpx;
   display: flex;
   padding: 15rpx 0;
 }

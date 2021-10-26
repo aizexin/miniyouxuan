@@ -1,0 +1,15 @@
+.upImageWarp {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+}
+.upImageWarp image {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+}
+.upImageWarp icon {
+  position: absolute;
+  right: -20rpx;
+  top: -15rpx;
+}
