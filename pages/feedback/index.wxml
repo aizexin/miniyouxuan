@@ -11,13 +11,8 @@
       <textarea placeholder="请描述问题"></textarea>
       <view class="feedback_tool">
         <view class="upImageTool">
-          <button>+</button>
-          <ai-upImage class="upImageItem"></ai-upImage>
-          <ai-upImage class="upImageItem"></ai-upImage>
-          <ai-upImage class="upImageItem"></ai-upImage>
-          <ai-upImage class="upImageItem"></ai-upImage>
-          <ai-upImage class="upImageItem"></ai-upImage>
-          <ai-upImage class="upImageItem"></ai-upImage>
+          <button bindtap="onClickAddImage">+</button>
+          <ai-upImage class="upImageItem" wx:for="{{upImageUrls}}" wx:key="{{index}}" imageUrl="{{item}}" index="{{index}}" bindonClickDelte='onClickDelte'></ai-upImage>
         </view>
       </view>
     </view>

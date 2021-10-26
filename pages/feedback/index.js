@@ -17,6 +17,7 @@ Page({
         isActive:false
       }
     ],
+    upImageUrls:[]
   },
 
   /**
@@ -28,5 +29,24 @@ Page({
   // ----action
   itemChange(e){
 
+  },
+  onClickAddImage() {
+    wx.chooseImage({
+      count: 9,
+      success:(res)=> {
+        console.log(res)
+        this.setData({
+          upImageUrls:[...this.data.upImageUrls,...res.tempFilePaths]
+        })
+      }
+    })
+  },
+  onClickDelte(e) {
+    const {index} = e.detail
+    let array = this.data.upImageUrls
+    array.splice(index,1)
+    this.setData({
+      upImageUrls:array
+    })
   }
 })

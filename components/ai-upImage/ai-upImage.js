@@ -4,7 +4,13 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    imageUrl:{
+      type:String,
+      value:''
+    },
+    index:{
+      type:Number
+    }
   },
 
   /**
@@ -18,6 +24,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onClickDelte() {
+      this.triggerEvent('onClickDelte',{'index':this.data.index})
+    }
   }
 })
