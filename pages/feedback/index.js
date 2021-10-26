@@ -1,3 +1,5 @@
+const { showToastText } = require("../../utils/toast")
+
 // pages/feedback/index.js
 Page({
 
@@ -17,7 +19,8 @@ Page({
         isActive:false
       }
     ],
-    upImageUrls:[]
+    upImageUrls:[],
+    feedbackText:''
   },
 
   /**
@@ -47,6 +50,35 @@ Page({
     array.splice(index,1)
     this.setData({
       upImageUrls:array
+    })
+  },
+  blurText(e) {
+    this.setData({
+      feedbackText:e.detail.value
+    })
+  },
+  onClickSubmit() {
+    const tab = wx.createSelectorQuery().select('#tabs')
+
+    // 验证text
+    if(this.data.feedbackText.length === 0) {
+      showToastText('请输入文字')
+      return
+    }
+    // 上传图片服务器用wx, 成功后传到后台服务器
+    // wx.uploadFile({
+    //   filePath: 'filePath',
+    //   name: 'name',
+    //   url: 'url',
+    // })
+    // 清空
+    this.setData({
+      feedbackText:'',
+      upImageUrls:[]
+    })
+    // 返回
+    wx.navigateBack({
+      delta: 1,
     })
   }
 })

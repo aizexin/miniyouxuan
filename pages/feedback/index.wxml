@@ -1,4 +1,4 @@
-<tabs tabs="{{tabs}}" bind:itemChange="itemChange">
+<tabs id="tabs" tabs="{{tabs}}" bind:itemChange="itemChange">
   <view class="feedback_main">
     <view class="feedback_title">问题的种类</view>
     <view class="feedback_tips">
@@ -8,16 +8,16 @@
       <text>其他</text>
     </view>
     <view class="feedback_content">
-      <textarea placeholder="请描述问题"></textarea>
+      <textarea placeholder="请描述问题" value="{{feedbackText}}" bindblur="blurText"></textarea>
       <view class="feedback_tool">
         <view class="upImageTool">
           <button bindtap="onClickAddImage">+</button>
-          <ai-upImage class="upImageItem" wx:for="{{upImageUrls}}" wx:key="{{index}}" imageUrl="{{item}}" index="{{index}}" bindonClickDelte='onClickDelte'></ai-upImage>
+          <ai-upImage class="upImageItem" wx:for="{{upImageUrls}}" wx:key="index" imageUrl="{{item}}" index="{{index}}" bindonClickDelte='onClickDelte'></ai-upImage>
         </view>
       </view>
     </view>
     <view class="form_submitButton_warp">
-      <button>
+      <button bindtap="onClickSubmit">
         <icon type="success_no_circle" size="23" color="white"></icon>
         提交
       </button>
